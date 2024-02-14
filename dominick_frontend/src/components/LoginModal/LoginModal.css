@@ -1,0 +1,7 @@
+.redirect__submit-button {
+  border: none;
+  background: none;
+}
+.redirect__submit-button:hover {
+  cursor: pointer;
+}

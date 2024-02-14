@@ -1,0 +1,25 @@
+.footer {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.footer__links {
+  display: flex;
+  gap: 30px;
+}
+.footer__link-images {
+  display: flex;
+  gap: 30px;
+}
+.footer__image-github {
+  width: 24px;
+  height: 24px;
+}
+.footer__image-facebook {
+  width: 24px;
+  height: 24px;
+}
+.footer__copyright {
+  opacity: 0.5;
+}
