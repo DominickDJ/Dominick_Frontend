@@ -1,26 +1,16 @@
 import About from "../About/About";
 import Navigation from "../Navigation/Navigation";
 import SearchList from "../SearchList/SearchList";
-import React, { useState } from "react";
-import { search } from "../../utils/api";
+import React from "react";
 
-export default function Main({ onSearch }, isLoggedIn) {
-  const [searchResults, setSearchResults] = useState([]);
-
-  // const performSearch = async (searchTerm) => {
-  //   try {
-  //     const data = await search(searchTerm);
-  //     setSearchResults(data);
-  //   } catch (error) {
-  //     console.error("Error performing search:", error);
-  //   }
-  // };
-
+export default function Main({ onSearch, searchItems }) {
+  console.log(searchItems);
   return (
     <main className="main">
       <section>
         <Navigation onSearch={onSearch} />
-        <SearchList items={searchResults} isLoggedIn={isLoggedIn} />
+        {searchItems?.articles && <SearchList searchItems={searchItems} />}
+
         <About />
       </section>
     </main>

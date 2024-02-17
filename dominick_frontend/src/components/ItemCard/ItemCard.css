@@ -1,32 +1,62 @@
-.card__name {
-  text-align: center;
-  padding-right: 20px;
-}
-
 .card__items {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   gap: 20px;
   justify-content: center;
   margin-top: 20px;
+  width: 1100px;
+  border: none;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
 }
-
 .card__image {
-  width: 325px;
-  height: 328px;
-  border-radius: 10px;
+  max-width: 850px;
+  max-height: 700px;
+  border-radius: 20px;
   cursor: pointer;
+  padding-top: 40px;
+}
+.card__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 20px;
 }
 
+.card__author {
+  padding-bottom: 10px;
+  opacity: 0.7;
+  color: grey;
+}
+
+.card__title {
+  font-size: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+.card__description {
+  padding-top: 30px;
+  font-size: 20px;
+}
+.card__continue {
+  padding-top: 30px;
+}
+.card__url {
+  padding-bottom: 10px;
+}
 .card_item {
   background-color: white;
   display: flex;
   padding-right: 0px;
   padding: 2px;
 }
-
-.image_preview {
-  max-width: 498px;
-  max-height: 610px;
-  width: fit-content;
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .card__items {
+    max-width: 600px;
+  }
+  .card__image {
+  }
 }

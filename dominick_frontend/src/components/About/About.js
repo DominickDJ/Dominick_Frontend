@@ -20,9 +20,8 @@ export default function About() {
           life's next challenge!
         </p>
         <p className="about__paragraph">
-          Thanks for checking out my NewsExplorer application! Currently it is
-          designed for testing. Feel free to create a mock account and try it
-          out!
+          Thank you for viewing my NewsExplorer application! Future updates for
+          user sign-in and saved articles are scheduled!
         </p>
       </div>
     </div>

@@ -1,4 +1,5 @@
 .search {
+  font-family: "Cabinet Grotesk", sans-serif;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;

@@ -4,36 +4,22 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Preloader from "../Preloader/Preloader";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
-import { CurrentUserContext } from "../../contexts/CurrentUserContext";
-import LoginModal from "../LoginModal/LoginModal";
-import RegisterModal from "../RegisterModal/RegisterModal";
 import Main from "../Main/Main";
-import About from "../About/About";
 import { search } from "../../utils/api";
+import axios from "axios";
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [currentUser, setCurrentUser] = useState({});
-  const [activeModal, setActiveModal] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [searchQuery] = useState("");
+  const [setError] = useState(null);
+  const [page] = useState(1);
+  const [searchItems, setSearchItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleCurrentUser = (data) => {
-    setCurrentUser(data);
-  };
-
-  const handleCreateModal = (modalName) => {
-    setActiveModal(modalName);
-  };
-
-  const handleCloseModal = () => {
-    setActiveModal("");
-  };
-
-  const onSearch = () => {
+  const onSearch = (searchQuery) => {
     setIsLoading(true);
-    return search()
-      .then(() => {
-        handleCloseModal();
+    return search(searchQuery)
+      .then((searchItems) => {
+        setSearchItems(searchItems);
       })
       .catch(console.error)
       .finally(() => {
@@ -49,42 +35,53 @@ const App = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      setIsLoading(true);
+      setError(null);
+      try {
+        const response = await axios.get(
+          "https://nomoreparties.co/news/v2/everything",
+          {
+            params: {
+              q: searchQuery,
+              page,
+              pageSize: 3,
+              apiKey: "919fb8f18ecc48a6b3d75e8d44206b90",
+            },
+          }
+        );
+        const newData = response.data.articles;
+        setSearchItems((prevItems) => [...prevItems, ...newData]);
+        setError(null);
+      } catch (error) {
+        setError(
+          "Sorry, something went wrong during the request. There may be a connection issue or the server may be down. Please try again later."
+        );
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    if (searchQuery) {
+      fetchData();
+    }
+  }, [searchQuery, setError, page]);
+
   return (
-    <CurrentUserContext.Provider value={{ isLoggedIn }}>
-      <BrowserRouter>
-        <div className="page">
-          <Header onCreateModal={handleCreateModal} />
-          <Routes>
-            <Route
-              path="/"
-              element={<Main isLoggedIn={isLoggedIn} onSearch={onSearch} />}
-            />
-            <Route path="/about" element={<About />} />
-            {/* <Route path="/*" element={<NotFoundPage />} /> */}
-          </Routes>
-          <Footer />
-          {activeModal === "LoginModal" && (
-            <LoginModal
-              onCreateModal={handleCreateModal}
-              onClose={handleCloseModal}
-              buttonText="Sign In"
-              setActiveModal={setActiveModal}
-              currentUser={currentUser}
-              isLoading={isLoading}
-            />
-          )}
-          {activeModal === "RegisterModal" && (
-            <RegisterModal
-              onClose={handleCloseModal}
-              onCreateModal={handleCreateModal}
-              buttonText="Sign Up"
-              setActiveModal={setActiveModal}
-            />
-          )}
-        </div>
-        {isLoading ? <Preloader /> : null}
-      </BrowserRouter>
-    </CurrentUserContext.Provider>
+    <BrowserRouter>
+      <div className="page">
+        <Header />
+        <Routes>
+          <Route
+            path="/"
+            element={<Main onSearch={onSearch} searchItems={searchItems} />}
+          />
+        </Routes>
+        <Footer />
+      </div>
+      {isLoading ? <Preloader /> : null}
+    </BrowserRouter>
   );
 };
 
