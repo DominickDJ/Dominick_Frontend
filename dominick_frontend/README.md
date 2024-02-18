@@ -7,12 +7,9 @@
 **Recent updates**
 
 - **Description**
-  A Full-stack web application called “NewsExplorer”. This application reads news data from a news API.
+  A Frontend web application called “NewsExplorer”. This application reads news data from a news API through a proxy then renders called information to the page.
 
   **Links**
-
-- [Link to Backend]()
-- [Link to Github]()
 
 - [View finished Project]()
 

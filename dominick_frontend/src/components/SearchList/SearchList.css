@@ -4,7 +4,10 @@
   padding-bottom: 20px;
   margin-left: 116px;
 }
-
+.list__border {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 30px;
+}
 .list__button {
   background: none;
   border: none;
@@ -40,6 +43,27 @@
 .nothing__found {
   padding-top: 40px;
   font-size: 32px;
+}
+.page__numbers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-top: 70px;
+  border: none;
+}
+.page__number {
+  border: none;
+  background: none;
+}
+.page__number:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+.page__number.active {
+  color: white;
+  background-color: rgb(22, 125, 241);
 }
 @media screen and (min-width: 320px) and (max-width: 768px) {
   .list__section {

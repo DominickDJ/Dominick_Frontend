@@ -1,6 +1,6 @@
 .footer {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 20px;
   font-family: "Cabinet Grotesk", sans-serif;
 }
@@ -8,6 +8,7 @@
 .footer__links {
   display: flex;
   gap: 30px;
+  padding-right: 40px;
 }
 .footer__link-images {
   display: flex;
@@ -23,4 +24,5 @@
 }
 .footer__copyright {
   opacity: 0.5;
+  padding-left: 30px;
 }
