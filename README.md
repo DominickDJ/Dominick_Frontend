@@ -11,7 +11,7 @@
 
   **Links**
 
-- [View finished Project]()
+- [View finished Project](https://DominickDJ.github.io/Dominick_Frontend)
 
 **Deployment**
 
