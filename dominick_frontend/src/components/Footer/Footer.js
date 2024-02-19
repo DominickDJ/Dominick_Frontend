@@ -15,7 +15,7 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div>TripleTen</div>
+          <div className="triple-ten">TripleTen</div>
         </a>
         <div>
           <div className="footer__link-images">
@@ -25,18 +25,18 @@ export default function Footer() {
               rel="noopener noreferrer"
             >
               <img
-                className="footer__image-github"
+                className="footer__image"
                 src={linkedInImage}
                 alt="LinkedIn logo"
               />
-            </a>{" "}
+            </a>
             <a
               href="https://www.github.com/DominickDJ"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img
-                className="footer__image-github"
+                className="footer__image"
                 src={gitHubImage}
                 alt="Github logo"
               />
@@ -47,7 +47,7 @@ export default function Footer() {
               rel="noopener noreferrer"
             >
               <img
-                className="footer__image-facebook"
+                className="footer__image"
                 src={facebookImage}
                 alt="Facebook logo"
               />
