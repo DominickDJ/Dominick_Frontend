@@ -1,11 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import "./Header.css";
 
 const Header = () => {
-  const HomeButton = () => {
-    window.location.reload();
+  const navigate = useNavigate();
+
+  const handleAboutClick = () => {
+    navigate("/about");
+  };
+
+  const handleHomeClick = () => {
+    navigate("/");
   };
 
   return (
@@ -14,11 +20,20 @@ const Header = () => {
       <div className="header__links">
         <Link to="/">
           <button
-            onClick={HomeButton}
+            onClick={handleHomeClick}
             className="header__home-button"
             type="text"
           >
             Home
+          </button>
+        </Link>
+        <Link to="/about">
+          <button
+            onClick={handleAboutClick}
+            className="header__home-button"
+            type="text"
+          >
+            About the author
           </button>
         </Link>
       </div>

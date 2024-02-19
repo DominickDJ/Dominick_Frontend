@@ -7,6 +7,7 @@ import Header from "../Header/Header";
 import Main from "../Main/Main";
 import { search } from "../../utils/api";
 import axios from "axios";
+import About from "../About/About";
 
 const App = () => {
   const [searchQuery] = useState("");
@@ -77,6 +78,7 @@ const App = () => {
             path="/"
             element={<Main onSearch={onSearch} searchItems={searchItems} />}
           />
+          <Route path="/about" element={<About />} />
         </Routes>
         <Footer />
       </div>
