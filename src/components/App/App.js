@@ -70,7 +70,7 @@ const App = () => {
   }, [searchQuery, setError, page]);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/">
       <div className="page">
         <Header />
         <Routes>
