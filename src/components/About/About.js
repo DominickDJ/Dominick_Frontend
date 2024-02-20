@@ -1,11 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import aboutImage from "../../images/aboutImage.jpg";
 import "./About.css";
 
 export default function About() {
+  const [isSpinning, setIsSpinning] = useState(false);
+
+  const handleImageClick = () => {
+    setIsSpinning(true);
+    setTimeout(() => {
+      setIsSpinning(false);
+    }, 1000);
+  };
+
+  const imageClassName = isSpinning ? "about__image spinning" : "about__image";
+
   return (
     <div className="about">
-      <img className="about__image" src={aboutImage} alt="Author" />
+      <img
+        className={imageClassName}
+        src={aboutImage}
+        alt="Author"
+        onClick={handleImageClick}
+      />
       <div className="about__section">
         <h1 className="about__title">About the Author</h1>
         <p className="about__paragraph">

@@ -31,7 +31,26 @@
   left: 104px;
   border-radius: 250px;
   margin-top: 45px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+  transition: transform 1s;
+}
+.about__image:hover {
+  cursor: pointer;
+}
+.spinning {
+  animation: spin 1s linear;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
 }
 
 @media screen and (min-width: 320px) and (max-width: 768px) {
