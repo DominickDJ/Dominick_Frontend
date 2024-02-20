@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Dominick_Frontend/static/css/main.29eaf3b9.css",
-    "main.js": "/Dominick_Frontend/static/js/main.8f186365.js",
+    "main.js": "/Dominick_Frontend/static/js/main.d2bc14ff.js",
     "static/js/453.7167bdbd.chunk.js": "/Dominick_Frontend/static/js/453.7167bdbd.chunk.js",
     "static/media/aboutImage.jpg": "/Dominick_Frontend/static/media/aboutImage.e4a38475dc57506f20f7.jpg",
     "static/media/background.jpg": "/Dominick_Frontend/static/media/background.05e56201c0b305ca169b.jpg",
@@ -10,11 +10,11 @@
     "static/media/iconmonstr-facebook-6.svg": "/Dominick_Frontend/static/media/iconmonstr-facebook-6.4d94bb09217f91fb4c0d2dd6dbf4b412.svg",
     "index.html": "/Dominick_Frontend/index.html",
     "main.29eaf3b9.css.map": "/Dominick_Frontend/static/css/main.29eaf3b9.css.map",
-    "main.8f186365.js.map": "/Dominick_Frontend/static/js/main.8f186365.js.map",
+    "main.d2bc14ff.js.map": "/Dominick_Frontend/static/js/main.d2bc14ff.js.map",
     "453.7167bdbd.chunk.js.map": "/Dominick_Frontend/static/js/453.7167bdbd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.29eaf3b9.css",
-    "static/js/main.8f186365.js"
+    "static/js/main.d2bc14ff.js"
   ]
 }
