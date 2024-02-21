@@ -1,4 +1,4 @@
-.card__items {
+.card {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,7 +59,7 @@
   padding-right: 20px;
 }
 @media screen and (min-width: 320px) and (max-width: 768px) {
-  .card__items {
+  .card {
     width: calc(100% - 15px);
   }
   .card__image {
@@ -68,7 +68,7 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1280px) {
-  .card__items {
+  .card {
     width: calc(100% - 15px);
   }
   .card__image {

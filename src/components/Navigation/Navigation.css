@@ -47,6 +47,10 @@
   cursor: pointer;
   opacity: 0.6;
 }
+.search__button:focus {
+  outline: none;
+  background-color: white;
+}
 .search__buttons {
   display: flex;
   gap: 20px;

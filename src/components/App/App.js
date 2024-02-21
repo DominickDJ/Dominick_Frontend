@@ -6,7 +6,6 @@ import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import { search } from "../../utils/api";
-import axios from "axios";
 import About from "../About/About";
 
 const App = () => {
@@ -21,6 +20,11 @@ const App = () => {
     return search(searchQuery)
       .then((searchItems) => {
         setSearchItems(searchItems);
+        if (searchItems.length === 0) {
+          setError("No results found for the query search");
+        } else {
+          setError(null);
+        }
       })
       .catch(console.error)
       .finally(() => {
@@ -41,18 +45,8 @@ const App = () => {
       setIsLoading(true);
       setError(null);
       try {
-        const response = await axios.get(
-          "https://nomoreparties.co/news/v2/everything",
-          {
-            params: {
-              q: searchQuery,
-              page,
-              pageSize: 3,
-              apiKey: "919fb8f18ecc48a6b3d75e8d44206b90",
-            },
-          }
-        );
-        const newData = response.data.articles;
+        const response = await search(searchQuery, page);
+        const newData = response.articles;
         setSearchItems((prevItems) => [...prevItems, ...newData]);
         setError(null);
       } catch (error) {

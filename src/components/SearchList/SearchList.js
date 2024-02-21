@@ -47,7 +47,7 @@ const SearchList = ({ searchItems }) => {
   const pageNumbers = Array.from(Array(totalPages).keys());
 
   return (
-    <section className="list__section" id="listSection">
+    <section className="list" id="listSection">
       <div className="list__border">
         <div className="list__items">
           {startIndex > 0 && (

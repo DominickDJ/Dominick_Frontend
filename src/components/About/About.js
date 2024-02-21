@@ -15,7 +15,7 @@ export default function About() {
   const imageClassName = isSpinning ? "about__image spinning" : "about__image";
 
   return (
-    <div className="about">
+    <section className="about">
       <img
         className={imageClassName}
         src={aboutImage}
@@ -40,6 +40,6 @@ export default function About() {
           user sign-in and saved articles are scheduled!
         </p>
       </div>
-    </div>
+    </section>
   );
 }
