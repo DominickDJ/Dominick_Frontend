@@ -10,7 +10,7 @@ import About from "../About/About";
 
 const App = () => {
   const [searchQuery] = useState("");
-  const [setError] = useState(null);
+  const [error, setError] = useState(null);
   const [page] = useState(1);
   const [searchItems, setSearchItems] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -21,9 +21,9 @@ const App = () => {
       .then((searchItems) => {
         setSearchItems(searchItems);
         if (searchItems.length === 0) {
-          setError("No results found for the query search");
+          error("No results found for the query search");
         } else {
-          setError(null);
+          error(null);
         }
       })
       .catch(console.error)
