@@ -14,16 +14,15 @@ const App = () => {
   const [page] = useState(1);
   const [searchItems, setSearchItems] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-
   const onSearch = (searchQuery) => {
     setIsLoading(true);
     return search(searchQuery)
       .then((searchItems) => {
         setSearchItems(searchItems);
         if (searchItems.length === 0) {
-          error("No results found for the query search");
+          setError("No results found for the query search");
         } else {
-          error(null);
+          setError(null);
         }
       })
       .catch(console.error)
@@ -31,7 +30,6 @@ const App = () => {
         setIsLoading(false);
       });
   };
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
@@ -43,14 +41,14 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
-      error(null);
+      setError(null);
       try {
         const response = await search(searchQuery, page);
         const newData = response.articles;
         setSearchItems((prevItems) => [...prevItems, ...newData]);
-        error(null);
+        setError(null);
       } catch (error) {
-        error(
+        setError(
           "Sorry, something went wrong during the request. There may be a connection issue or the server may be down. Please try again later."
         );
       } finally {
@@ -61,7 +59,7 @@ const App = () => {
     if (searchQuery) {
       fetchData();
     }
-  }, [searchQuery, error, page]);
+  }, [searchQuery, page]);
 
   return (
     <HashRouter basename="/">
