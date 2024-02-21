@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Dominick_Frontend/static/css/main.d70c83ce.css",
-    "main.js": "/Dominick_Frontend/static/js/main.ec5ec725.js",
+    "main.js": "/Dominick_Frontend/static/js/main.833446dc.js",
     "static/js/453.7167bdbd.chunk.js": "/Dominick_Frontend/static/js/453.7167bdbd.chunk.js",
     "static/media/aboutImage.jpg": "/Dominick_Frontend/static/media/aboutImage.e4a38475dc57506f20f7.jpg",
     "static/media/background.jpg": "/Dominick_Frontend/static/media/background.05e56201c0b305ca169b.jpg",
@@ -10,11 +10,11 @@
     "index.html": "/Dominick_Frontend/index.html",
     "static/media/linkedIn.svg": "/Dominick_Frontend/static/media/linkedIn.ada11cda991129bc91b79d2c7cee1066.svg",
     "main.d70c83ce.css.map": "/Dominick_Frontend/static/css/main.d70c83ce.css.map",
-    "main.ec5ec725.js.map": "/Dominick_Frontend/static/js/main.ec5ec725.js.map",
+    "main.833446dc.js.map": "/Dominick_Frontend/static/js/main.833446dc.js.map",
     "453.7167bdbd.chunk.js.map": "/Dominick_Frontend/static/js/453.7167bdbd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d70c83ce.css",
-    "static/js/main.ec5ec725.js"
+    "static/js/main.833446dc.js"
   ]
 }
