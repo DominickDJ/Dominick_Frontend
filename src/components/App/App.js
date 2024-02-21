@@ -1,6 +1,6 @@
 import "./App.css";
 import { useEffect, useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import Preloader from "../Preloader/Preloader";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
@@ -70,7 +70,7 @@ const App = () => {
   }, [searchQuery, setError, page]);
 
   return (
-    <BrowserRouter basename="/">
+    <HashRouter basename="/">
       <div className="page">
         <Header />
         <Routes>
@@ -83,7 +83,7 @@ const App = () => {
         <Footer />
       </div>
       {isLoading ? <Preloader /> : null}
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
