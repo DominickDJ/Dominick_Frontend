@@ -43,14 +43,14 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
-      setError(null);
+      error(null);
       try {
         const response = await search(searchQuery, page);
         const newData = response.articles;
         setSearchItems((prevItems) => [...prevItems, ...newData]);
-        setError(null);
+        error(null);
       } catch (error) {
-        setError(
+        error(
           "Sorry, something went wrong during the request. There may be a connection issue or the server may be down. Please try again later."
         );
       } finally {
@@ -61,7 +61,7 @@ const App = () => {
     if (searchQuery) {
       fetchData();
     }
-  }, [searchQuery, setError, page]);
+  }, [searchQuery, error, page]);
 
   return (
     <HashRouter basename="/">
