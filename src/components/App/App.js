@@ -70,7 +70,7 @@ const App = () => {
   }, [searchQuery, setError, page]);
 
   return (
-    <HashRouter>
+
       <div className="page">
         <Header />
         <Routes>
