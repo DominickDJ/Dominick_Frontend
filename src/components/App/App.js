@@ -14,6 +14,7 @@ const App = () => {
   const [page] = useState(1);
   const [searchItems, setSearchItems] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+
   const onSearch = (searchQuery) => {
     setIsLoading(true);
     return search(searchQuery)
