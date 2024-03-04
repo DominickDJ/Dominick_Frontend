@@ -3,7 +3,7 @@ import "./ItemCard.css";
 
 const ItemCard = ({ item }) => {
   return (
-    <div className="card__items">
+    <article className="card">
       <div className="image__wrapper">
         <img
           alt={item.source.name}
@@ -12,9 +12,9 @@ const ItemCard = ({ item }) => {
         />
       </div>
       <div className="card__text">
-        <div className="card__title">{item.title}</div>
-        <div className="card__description">{item.description}</div>
-        <div className="card__continue">Continue reading at...</div>
+        <h2 className="card__title">{item.title}</h2>
+        <p className="card__description">{item.description}</p>
+        <p className="card__continue">Continue reading at...</p>
         <a
           href={item.url}
           className="card__url"
@@ -25,7 +25,7 @@ const ItemCard = ({ item }) => {
         </a>
       </div>
       <div className="card__author">{item.author}</div>
-    </div>
+    </article>
   );
 };
 

@@ -49,17 +49,17 @@
     margin-left: 10px;
   }
   .header__logo {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 700;
     line-height: 12px;
   }
   .header__home-button {
-    font-size: 9px;
+    font-size: 12px;
     line-height: 12px;
     padding-bottom: 5px;
   }
   .header__button {
-    font-size: 9px;
+    font-size: 12px;
     line-height: 12px;
   }
 }

@@ -27,6 +27,7 @@ export default function Navigation({ onSearch }) {
       <form onSubmit={handleSubmit}>
         <div className="search__buttons">
           <input
+            required
             className="search__bar"
             type="text"
             placeholder="Enter location or topic"

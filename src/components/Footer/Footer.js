@@ -1,14 +1,14 @@
 import "./Footer.css";
 import gitHubImage from "../../images/github.svg";
 import facebookImage from "../../images/iconmonstr-facebook-6.svg";
-import linkedInImage from "../../images/linkedIn.png";
+import linkedInImage from "../../images/linkedIn.svg";
 
 export default function Footer() {
   return (
     <footer className="footer">
-      <div className="footer__copyright">
-        © 2024 Developed by Dominick Harper
-      </div>
+      <p className="footer__copyright">
+        <span> © 2024 Developed by Dominick Harper</span>
+      </p>
       <div className="footer__links">
         <a
           href="https://www.TripleTen.com"
